@@ -2,8 +2,8 @@ package test
 
 import (
 	"fmt"
-	"github.com/yancyzhou/Jd_union_sdk/conf"
 	"github.com/yancyzhou/Jd_union_sdk/jduion"
+	"github.com/yancyzhou/Jd_union_sdk/union"
 	"testing"
 )
 
