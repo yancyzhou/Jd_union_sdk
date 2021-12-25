@@ -1,6 +1,8 @@
 package jduion
 
-import "encoding/json"
+import (
+	"encoding/json"
+)
 
 type JdUnionOpenPromotionToolsIntelligenceQueryResponse struct {
 	JdUnionOpenPromotionToolsIntelligenceQueryResponse struct {
@@ -24,30 +26,24 @@ type JdUnionOpenPromotionToolsIntelligenceQueryResponse struct {
 
 type JdUnionOpenPromotionToolsIntelligenceQueryRequest struct {
 	Req struct {
-		Title      string `json:"title"`
-		Type       int    `json:"type"`
-		Cid1List   []int  `json:"cid_1_list"`
-		Status     int    `json:"status"`
-		Essence    string `json:"essence"`
-		PageIndex  int    `json:"pageIndex"`
-		PageSize   int    `json:"pageSize"`
-		UnionId    int    `json:"unionid"`
-		Pid        string `json:"pid"`
-		SubUnionId string `json:"subUnionId"`
-		SiteId     int    `json:"siteId"`
-		PositionId int    `json:"positionId"`
+		Title      string `json:"title,omitempty"`
+		Type       int    `json:"type,omitempty"`
+		Cid1List   []int  `json:"cid_1_list,omitempty"`
+		Status     int    `json:"status,omitempty"`
+		Essence    string `json:"essence,omitempty"`
+		PageIndex  int    `json:"pageIndex,omitempty"`
+		PageSize   int    `json:"pageSize,omitempty"`
+		UnionId    int    `json:"unionid,omitempty"`
+		Pid        string `json:"pid,omitempty"`
+		SubUnionId string `json:"subUnionId,omitempty"`
+		SiteId     int    `json:"siteId,omitempty"`
+		PositionId int    `json:"positionId,omitempty"`
 	} `json:"req"`
 }
 
 func (J *JdSdk) JdUnionOpenPromotionToolsIntelligenceQuery(query interface{}) (result *JdUnionOpenPromotionToolsIntelligenceQueryResponse) {
-	J.SysParams.Method = "jd.union.open.category.goods.get"
+	J.SysParams.Method = "jd.union.open.promotion.tools.intelligence.query"
 	bodyBytes := J.BodyBytes(query)
-	//result := &CategoryResponse{}
-	//e := json.Unmarshal([]byte(bodyBytes), &result)
-	//if e != nil {
-	//	panic(e)
-	//}
-	//categoryResult = &CateGoryResult{}
 	e := json.Unmarshal(bodyBytes, &result)
 	if e != nil {
 		panic(e)

@@ -1,6 +1,6 @@
 package conf
 
-const (
-	AppSecret = ""
-	JdAppKey  = ""
-)
+//const (
+//	AppSecret = ""
+//	JdAppKey  = ""
+//)

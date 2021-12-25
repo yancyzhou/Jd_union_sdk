@@ -13,10 +13,10 @@ type JDApi interface {
 	 */
 
 	JdUnionOpenPromotionCommonGet(query string) *PromotionCommonResult
-	JdUnionOpenOrderRowQuery(query string) *OrderRowQueryResult         //
-	JdUnionOpenOrderBonusQuery(query string) *OrderBonusQueryResult     //jd_union_open_order_bonus_query
-	JdUnionOpenPromotionBySubUnionIdGet(query string) *SubUnionIdResult //jd_union_open_promotion_bysubunionid_get
-	JdUnionOpenGoodsQuery(query string) *GoodsResult                    //jd_union_open_goods_query
+	JdUnionOpenOrderRowQuery(query string) *OrderRowQueryResult
+	JdUnionOpenOrderBonusQuery(query string) *OrderBonusQueryResult
+	JdUnionOpenPromotionBySubUnionIdGet(query string) *SubUnionIdResult
+	JdUnionOpenGoodsQuery(query string) *GoodsResult
 	/*
 		@name jd.union.open.category.goods.get 商品类目查询
 		@des 根据商品的父类目id查询子类目id信息，通常用获取各级类目对应关系，以便将推广商品归类。业务参数parentId、grade都输入0可查询所有一级类目ID，之后再用其作为parentId查询其子类目。
@@ -24,7 +24,7 @@ type JDApi interface {
 	*/
 	JDUnionOpenCategoryGoodsGet(query string) *CategoryResponse
 
-	JdUnionOpenGoodsJingFenQuery(query string) *JFRestult
+	JdUnionOpenGoodsJingFenQuery(query string) *JFResult
 	JdUnionOpenOrderQuery(query string) *OrderResult //jd_union_open_order_query
 
 }

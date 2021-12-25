@@ -2,7 +2,6 @@ package jduion
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/golang/glog"
 )
 
@@ -30,9 +29,9 @@ type SubUnionIdResult struct {
 func (J *JdSdk) JdUnionOpenPromotionBySubUnionIdGet(Query interface{}) (res *SubUnionIdResult) {
 	J.SysParams.Method = "jd.union.open.promotion.bysubunionid.get"
 	bodyBytes := J.BodyBytes(Query)
-	fmt.Println(string(bodyBytes))
-	result := &JdUnionOpenPromotionBySubUnionIdGetResponse{}
-	e := json.Unmarshal([]byte(bodyBytes), &result)
+	var result JdUnionOpenPromotionBySubUnionIdGetResponse
+	e := json.Unmarshal(bodyBytes, &result)
+
 	if e != nil {
 		panic(e)
 	}
